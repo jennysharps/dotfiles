@@ -3,3 +3,4 @@ alias token="printf 'protocol=https\nhostname=github.com' | git credential fill 
 eval "$(rbenv init -)"
 export GPG_TTY=$(tty)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export GH_SSL=1
