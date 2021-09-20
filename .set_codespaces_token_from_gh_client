@@ -1,0 +1,16 @@
+# sets GITHUB_TOKEN with token from gh auth or starts a gh auth login flow
+
+(
+  unset GITHUB_TOKEN
+  printf 'protocol=https\nhost=github.com' | gh auth git-credential get > /dev/null
+) ||
+(
+  echo "gh auth does not appear to be logged in. Starting login..."
+  unset GITHUB_TOKEN
+  gh auth login
+)
+
+export GITHUB_TOKEN=$(
+  unset GITHUB_TOKEN
+  printf 'protocol=https\nhost=github.com' | gh auth git-credential get | grep password= | sed 's/password=//'
+)
