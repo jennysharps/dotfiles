@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 zshrc() {
     $ZSH:=$HOME/.oh-my-zsh
     echo "==========================================================="
@@ -19,10 +18,6 @@ zshrc() {
     echo "             Symlinking dracula theme                      "
     echo "-----------------------------------------------------------"
     ln -s $ZSH/custom/themes/dracula/dracula.zsh-theme $ZSH/themes/dracula.zsh-theme
-    echo "==========================================================="
-    echo "             Loading ~/.zshrc                              "
-    echo "-----------------------------------------------------------"
-    source ~/.zshrc
 }
 
 echo "==========================================================="
