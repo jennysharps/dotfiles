@@ -1,7 +1,9 @@
 #!/bin/bash
 
+# Get the directory in which this script lives.
+$DOTFILES_DIR=$(dirname "$(readlink -f "$0")")
+
 zshrc() {
-    $ZSH:=$HOME/.oh-my-zsh
     echo "==========================================================="
     echo "             Installing dotfiles dependencies              "
     echo "-----------------------------------------------------------"
@@ -9,15 +11,15 @@ zshrc() {
     echo "==========================================================="
     echo "             Symlinking dotfiles                           "
     echo "-----------------------------------------------------------"
-    ln -sf /workspaces/.dotfiles/zshrc ~/.zshrc
+    rm -rf ~/.zshrc
+    ln -sf $DOTFILES_DIR/zshrc ~/.zshrc
     echo "==========================================================="
-    echo "             Installing dracula theme source               "
+    echo "             Setting up dracula theme                      "
     echo "-----------------------------------------------------------"
-    git clone --depth=1 https://github.com/dracula/zsh.git $ZSH/custom/themes/dracula
-    echo "==========================================================="
-    echo "             Symlinking dracula theme                      "
-    echo "-----------------------------------------------------------"
-    ln -s $ZSH/custom/themes/dracula/dracula.zsh-theme $ZSH/themes/dracula.zsh-theme
+    ZSH="$HOME/.oh-my-zsh"
+    ZSH_CUSTOM="$ZSH/custom"
+    git clone --depth=1 https://github.com/dracula/zsh.git $ZSH_CUSTOM/themes/dracula
+    ln -s $ZSH_CUSTOM/themes/dracula/dracula.zsh-theme $ZSH/themes/dracula.zsh-theme
 }
 
 echo "==========================================================="
