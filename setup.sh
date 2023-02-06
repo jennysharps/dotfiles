@@ -1,16 +1,17 @@
 #!/bin/bash
 
 zshrc() {
-    $ZSH:=$HOME/.oh-my-zsh
+    ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
     echo "==========================================================="
     echo "             Installing plugins              "
     echo "-----------------------------------------------------------"
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM}/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
     echo "==========================================================="
     echo "             Installing dracula theme               "
     echo "-----------------------------------------------------------"
-    git clone --depth=1 https://github.com/dracula/zsh.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/dracula
+    git clone https://github.com/dracula/zsh.git "$ZSH_CUSTOM/themes/dracula" --depth=1
+    ln -s "$ZSH_CUSTOM/themes/dracula/dracula.zsh-theme" "$ZSH_CUSTOM/themes/dracula.zsh-theme"
     echo "==========================================================="
     echo "                  Import zshrc                             "
     echo "-----------------------------------------------------------"
