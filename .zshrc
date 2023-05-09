@@ -11,3 +11,11 @@ source $ZSH/oh-my-zsh.sh
 plugins=(git docker docker-compose zsh-autosuggestions zsh-syntax-highlighting)
 
 helphub_url() { echo  "https://$(jq -r ".CODESPACE_NAME" /workspaces/.codespaces/shared/environment-variables.json)-8280.preview.app.github.dev/"; }
+
+clone_ws() {
+  if [[ -n "$1" ]]; then
+    git clone "https://github.com/github/$1.git" "/workspaces/$1"
+  else
+      echo "error: missing repo name"
+  fi
+}
