@@ -19,3 +19,5 @@ clone_ws() {
       echo "error: missing repo name"
   fi
 }
+
+my_ip() { curl ipconfig.me }
