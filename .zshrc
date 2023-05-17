@@ -20,4 +20,7 @@ clone_ws() {
   fi
 }
 
-my_ip() { curl ipconfig.me }
+my_ip() {
+  IP=$(curl ifconfig.me 2>/dev/null)
+  echo "$IP"
+}
