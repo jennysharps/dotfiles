@@ -29,4 +29,4 @@ echo "Setting up dotfiles..."
 # [ -v GH_GH_PAT ] && export GITHUB_TOKEN="${GH_GH_PAT}"
 
 echo "Setting up ZSH..."
-zshrc
+# zshrc
