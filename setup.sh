@@ -26,7 +26,7 @@ echo "Setting up dotfiles..."
 
 # Set up GITHUB_TOKEN
 # Use GH_PAT instead of default GITHUB_TOKEN if it is defined.
-[ -v GH_GH_PAT ] && export CODESPACE_GITHUB_TOKEN="${GITHUB_TOKEN}" && export GITHUB_TOKEN="${GH_GH_PAT}"
+# [ -v GH_GH_PAT ] && export GITHUB_TOKEN="${GH_GH_PAT}"
 
 echo "Setting up ZSH..."
 zshrc
