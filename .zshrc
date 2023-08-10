@@ -24,3 +24,11 @@ my_ip() {
   IP=$(curl ifconfig.me 2>/dev/null)
   echo "$IP"
 }
+
+nvm_init() {
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+  [ -f ".nvmrc" ] && nvm install || nvm use
+}
+
