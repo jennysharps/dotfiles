@@ -20,7 +20,6 @@ zshrc() {
     # This is done in the `.devcontainer` for .bashrc, but not for .zshrc
     echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> "${HOME}/.zshrc"
     echo 'eval "$(rbenv init -)"' >> "${HOME}/.zshrc"
-    echo 'eval "[ -f .nvmrc ] && nvm install || nvm use"' >> "${HOME}/.zshrc"
 }
 
 echo "Setting up dotfiles..."
