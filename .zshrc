@@ -2,6 +2,7 @@
 export GIT_EDITOR=vim
 export ZSH="${HOME}/.oh-my-zsh"
 export GPG_TTY=$(tty)
+export PATH=/home/vscode/.nvm/versions/node/v20.17.0/bin:$PATH
 
 ZSH_THEME="dracula"
 
