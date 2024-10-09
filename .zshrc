@@ -2,7 +2,10 @@
 export GIT_EDITOR=vim
 export ZSH="${HOME}/.oh-my-zsh"
 export GPG_TTY=$(tty)
-export PATH=/home/vscode/.nvm/versions/node/v20.17.0/bin:$PATH
+
+node_bin_path="$(find ${HOME}/.nvm/versions/node -maxdepth 0  -type d -name "*" -exec find "{}" -maxdepth 2 -type d -name "bin" \;)"
+echo "Adding ${node_bin_path} to PATH"
+export PATH="${node_bin_path}:${PATH}"
 
 ZSH_THEME="dracula"
 
