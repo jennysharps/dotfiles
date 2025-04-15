@@ -37,3 +37,6 @@ nvm_init() {
   fi
 }
 
+# Add npm global bin to path
+NPM_GLOBAL_BIN_PATH="$(npm get prefix -g)"
+[[ -d $NPM_GLOBAL_BIN_PATH/bin ]] && export PATH="$NPM_GLOBAL_BIN_PATH/bin:$PATH"
